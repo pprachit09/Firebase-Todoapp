@@ -30,11 +30,11 @@ const renderItem = doc => {
 }
 
 // Get the data from database
-db.collection('tasks').get().then( snapshot => {
-    snapshot.docs.forEach( doc => {
-        renderItem(doc)
-    })
-}) 
+//db.collection('tasks').get().then( snapshot => {
+//    snapshot.docs.forEach( doc => {
+//        renderItem(doc)
+//    })
+//}) 
 
 //save the data into database
 form.addEventListener('submit', e => {
@@ -45,4 +45,17 @@ form.addEventListener('submit', e => {
     })
     form.task.value = '';
     form.priority.value = '';
+})
+
+//Real time update from database
+db.collection('tasks').onSnapshot( snapshot => {
+    let detectChange = snapshot.docChanges();
+    detectChange.forEach(change => {
+        if (change.type == 'added') {
+            renderItem(change.doc);
+        }else if(change.type == 'removed'){
+            let li = todoList.querySelector('[data-id='+ change.doc.id +']');
+            todoList.removeChild(li);
+        }  
+    })
 })
