@@ -7,9 +7,18 @@
     <body>
         <h1>My First App</h1>
         <div>
-            <form></form>
-                <ul id="todo-item">
-                </ul>
+            <form id="todo-form">
+                Task: <input type="text" name="task" placeholder="Take bath">
+                <label>Priority:
+                    <select name="priority" id="priority">  
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+            <ul id="todo-item"></ul>
         </div>
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
