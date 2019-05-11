@@ -1,14 +1,14 @@
 <html>
     <head>
-        <link rel="style.css" href="style.css">
+        <link type="text/css" rel="stylesheet" href="style.css">
         <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-firestore.js"></script>
     </head>
     <body>
-        <h1>My First App</h1>
-        <div>
+        <h1>To Do list</h1>
+        <div id="todo-wrapper">
             <form id="todo-form">
-                Task: <input type="text" name="task" placeholder="Take bath">
+                <input type="text" name="task" placeholder="Task">
                 <label>Priority:
                     <select name="priority" id="priority">  
                         <option value="Low">Low</option>

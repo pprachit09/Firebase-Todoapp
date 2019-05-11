@@ -4,18 +4,18 @@ const form = document.querySelector('#todo-form');
 //render the data to front end
 const renderItem = doc => {
     let li = document.createElement('li');
-    let item = document.createElement('b');
-    let time = document.createElement('h5');
+    let item = document.createElement('span');
+    let priority = document.createElement('span')
     //cross mark to delete the task from database
     let del = document.createElement('div');
 
     li.setAttribute('data-id', doc.id);
     item.textContent = doc.data().Task;
-    time.textContent = doc.data().Priority;
+    priority.textContent  = doc.data().Priority;
     del.textContent = 'x'
 
     li.appendChild(item)
-    li.appendChild(time)
+    li.appendChild(priority)
     li.appendChild(del)
 
     todoList.appendChild(li)
