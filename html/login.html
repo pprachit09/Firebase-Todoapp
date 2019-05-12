@@ -14,12 +14,12 @@
 </head>
 <body>
     <div class="container">
-        <form method="post" action="index.html">
+        <form method="post" action="index.html" id="login-form">
             <div class="box">
                 <h1>Way to Destination</h1>
-                <input type="email" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
-                <input type="password" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
-                <a href="#"><div class="btn">Sign In</div></a> <!-- End Btn -->       
+                <input type="email" name="email" id="login-email" class="email" />
+                <input type="password" name="password" id="login-psw" class="email" />
+                <button type="submit" class="btn" id="login">Sign In</button> <!-- End Btn -->       
                 <a href="#" onclick="openForm()"><div id="btn2">Sign Up</div></a> <!-- End Btn2 -->   
             </div> <!-- End Box -->      
         </form>        
@@ -28,40 +28,40 @@
 
     <!-- pop up-->
     <div class="form-popup" id="myForm">
-        <form method="post" action="index.html">
+        <form method="post" id="signup-form">
             <h1 style="background:white;">Welcome</h1>
-            <label for="email"><b>First name</b></label>
-            <input type="text" placeholder="Antony" name="email" required>
+            <label for="firstname"><b>First name</b></label>
+            <input type="text" placeholder="Antony" id="firstname" name="firstname" required>
             
-            <label for="email"><b>Last Name</b></label>
-            <input type="text" placeholder="Martial" name="email" required>
+            <label for="lastname"><b>Last Name</b></label>
+            <input type="text" placeholder="Martial" id="lastname" name="lastname" required>
             
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <input type="text" placeholder="Enter Email" id="email" name="email" required>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
 
             <button type="submit" class="btn-pop-up">Create</button>
-            <button type="submit" class="btn-pop-up" onclick="closeForm()">Close</button>
+            <button class="btn-pop-up" onclick="closeForm()">Close</button>
         </form>
     </div>
 
     <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyB2Krog9brBAVPkqN80qp9Yh2CfkpEiev8",
-                authDomain: "todo-app-71299.firebaseapp.com",
-                databaseURL: "https://todo-app-71299.firebaseio.com",
-                projectId: "todo-app-71299",
-                storageBucket: "todo-app-71299.appspot.com",
-                messagingSenderId: "851852275422",
-                appId: "1:851852275422:web:5e9f65dc3ff6f82d"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            const auth = firebase.auth();
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB2Krog9brBAVPkqN80qp9Yh2CfkpEiev8",
+            authDomain: "todo-app-71299.firebaseapp.com",
+            databaseURL: "https://todo-app-71299.firebaseio.com",
+            projectId: "todo-app-71299",
+            storageBucket: "todo-app-71299.appspot.com",
+            messagingSenderId: "851852275422",
+            appId: "1:851852275422:web:5e9f65dc3ff6f82d"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
     </script>
-        
+    <script src="../js/auth.js"></script>
 </body>
 </html>

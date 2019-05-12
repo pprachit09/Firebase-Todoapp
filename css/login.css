@@ -109,7 +109,7 @@ background:#3594D2;
   transform: translate(-50%, -50%);
   height: 335px;
   width: min-content;
-  display: block;
+  display: none;
   position: fixed;
   bottom: 100;
   right: 305px;
