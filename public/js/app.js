@@ -15,8 +15,19 @@ auth.onAuthStateChanged( user => {
         })
 
         //save the data into database
-        form.addEventListener('submit', e => {
+        form.addEventListener('submit', e => {            
             e.preventDefault() //To prevent page reloading
+
+            if(form.task.value.trim() == ''){
+                alert("task can't be blank")
+                return false
+            }
+        
+            if(form.priority.value.trim() == ''){
+                alert("priority can't be null")
+                return false
+            }
+
             db.collection('users').add({
                 User: user.uid,
                 Task: form.task.value,
@@ -29,6 +40,7 @@ auth.onAuthStateChanged( user => {
     }
     else{
         console.log('logged out');
+        window.location.replace('index.html')
     }
 })
 
