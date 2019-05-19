@@ -67,6 +67,6 @@ const renderItem = doc => {
 const logout = () => {
     auth.signOut().then( () => {
         console.log('user logged out')
-        window.location.replace('../html/login.html')
+        window.location.replace('index.html')
     })
 }

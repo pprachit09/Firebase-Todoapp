@@ -29,7 +29,7 @@ logIn.addEventListener('submit', e => {
     const psw = logIn['login-psw'].value;
 
     auth.signInWithEmailAndPassword(email, psw).then( creds => {
-        window.location.replace('../html/index.html')
+        window.location.replace('main.html')
     }).catch( error => {
         console.log(error)
         alert("Invalid credentials")
